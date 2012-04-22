@@ -17,18 +17,7 @@ jscroller
 	Each data record is a row passed as parameter to your onSuccessCallback  
 	The container is the list reference  
  
-	Example: new { success = true, total = TOTAL_LENGTH, data = PARTIAL_ROWS, message = string.Empty };  
- 
-	In ASP.NET MVC whe could do something like:  
- 
-	`[HttpPost]
-	public JsonResult GetItems(int start, int limit)
-	{
-		var itemsLength = GetItems().Count();  
-		var rows = GetItems().Skip(start).Take(limit).ToList();  
-		var result = new { success = true, total = itemsLength, data = rows, message = string.Empty };  
-		return Json(resultado);  
-	}`
+	Example: new { success = true, total = TOTAL_LENGTH, data = PARTIAL_ROWS, message = string.Empty };   
  
 3.	Name: onErrorCallback  
 	Default value: function (container, thrownError) { alert('An error occurred while trying to retrive data from store'); }  
@@ -56,11 +45,22 @@ jscroller
  
 ####Example
  
-    `var onSuccess = function (row, container) {
+    var onSuccess = function (row, container) {
 		container.append('<div>' + row.OrderNumber + '</div>'));
     }
  	
 	$('#list').jScroller("/Orders/GetItems", {
         limit: 15,
         onSuccessCallback: onSuccess
-    });`
+    });
+
+#####In ASP.NET MVC whe could do something like:  
+ 
+    [HttpPost]
+    public JsonResult GetItems(int start, int limit)
+    {
+        var itemsLength = GetItems().Count();  
+        var rows = GetItems().Skip(start).Take(limit).ToList();  
+        var result = new { success = true, total = itemsLength, data = rows, message = string.Empty };  
+        return Json(resultado);  
+    }
