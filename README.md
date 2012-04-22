@@ -54,7 +54,7 @@ jscroller
         onSuccessCallback: onSuccess
     });
 
-#####In ASP.NET MVC whe could do something like:  
+#####In ASP.NET MVC you could do something like:  
  
     [HttpPost]
     public JsonResult GetItems(int start, int limit)
