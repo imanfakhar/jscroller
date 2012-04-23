@@ -62,5 +62,5 @@ jscroller
         var itemsLength = GetItems().Count();  
         var rows = GetItems().Skip(start).Take(limit).ToList();  
         var result = new { success = true, total = itemsLength, data = rows, message = string.Empty };  
-        return Json(resultado);  
+        return Json(result);  
     }
