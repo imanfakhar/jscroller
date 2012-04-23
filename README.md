@@ -41,6 +41,10 @@ jscroller
 8.	Name: fullListText
 	Default value: 'There is no more items to show'
 	Description: The message added if you reach the end of the list.
+
+9.	Name: ajaxType
+	Default value: 'POST'
+	Description: The type of ajax 'GET' or 'POST'
  
 ####Example
  
@@ -61,5 +65,5 @@ jscroller
 		var itemsLength = GetItems().Count();
 		var rows = GetItems().Skip(start).Take(limit).ToList();
 		var result = new { success = true, total = itemsLength, data = rows, message = string.Empty };
-		return Json(resultado);
+		return Json(result);
 	}
