@@ -1,7 +1,7 @@
 ﻿/// <reference path="jquery-1.7.1.min.js" />
 
 /**
- * jScroller Plugin 0.0.9
+ * jScroller Plugin 0.1.0
  *
  * Copyright (c) 2012  Renato Saito (renato.saito at live.com)
  *
@@ -20,7 +20,8 @@
             timeout: 3 * 1000,
             loadingButtonText: 'Loading...',
             loadMoreButtonText: 'Load more',
-            fullListText: 'There is no more items to show'
+            fullListText: 'There is no more items to show',
+            ajaxType: 'POST'
         };
         var options = jQuery.extend(defaults, parameters);
         var list = jQuery(this),
@@ -30,7 +31,7 @@
             preLoad();
             jQuery.ajax({
                 url: store,
-                type: "POST",
+                type: options.ajaxType,
                 data: {
                     start: start,
                     limit: options.limit
