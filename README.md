@@ -3,7 +3,7 @@ jscroller
 
 ##jscroller - a customizable jquery infinite scroller plugin
 
-##now available @ NuGet https://nuget.org/packages/jScroller
+###now available @ NuGet https://nuget.org/packages/jScroller
  
 ####Parameters
 
