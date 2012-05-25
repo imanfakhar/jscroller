@@ -9,7 +9,7 @@ jscroller
 
 1.	Name: limit
 	Default value: 10
-	Description: The quantity of items to retrieve each time you 'scroll' or click in 'load more' button.
+	Description: The quantity of items to retrieve each time you 'scroll'/click in 'load more' button.
  
 2.	Name: onSuccessCallback  
 	Default value: function (row, container) { }  
