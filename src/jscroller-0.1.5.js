@@ -1,7 +1,5 @@
-﻿/// <reference path="jquery-1.7.1.min.js" />
-
-/**
-* jScroller Plugin 0.1.4
+﻿/**
+* jScroller Plugin 0.1.5
 *
 * Copyright (c) 2012  Renato Saito (renato.saito at live.com)
 *
@@ -18,7 +16,7 @@
             onErrorCallback: function (thrownError) { alert('An error occurred while trying to retrive data from store'); },
             onTimeOutCallback: function () { },
             timeOut: 3 * 1000,
-			autoIncreaseTimeOut: 1000;
+			autoIncreaseTimeOut: 1000,
 			retryOnTimeOut: false,
             loadingButtonText: 'Loading...',
             loadMoreButtonText: 'Load more',
