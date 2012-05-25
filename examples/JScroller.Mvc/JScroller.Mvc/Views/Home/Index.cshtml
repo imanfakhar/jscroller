@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Brands";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Brands</h2>
+<div id="list">
+</div>
+<script type="text/javascript">
+    var onSuccess = function (row, container) {
+        container.append('<div>' + row.Name + '</div>');
+    };
+
+    $('#list').jScroller("/Home/GetBrands", {
+        numberOfRowsToRetrieve: 5,
+        onSuccessCallback: onSuccess
+    });
+</script>
