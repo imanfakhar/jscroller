@@ -1,5 +1,5 @@
 ﻿/**
-* jScroller Plugin 0.1.5
+* jScroller Plugin 0.1.6
 *
 * Copyright (c) 2012  Renato Saito (renato.saito at live.com)
 *
@@ -75,6 +75,7 @@
                     if (ajaxParameters.start >= response.total) {
                         end = true;
                         list.find('#jscroll-fulllist').remove();
+						list.find(".jscroll-loadmore").parent("div").remove();
                         list.append('<div id="jscroll-fulllist">' + options.fullListText + '</div>');
                     }
                 },
