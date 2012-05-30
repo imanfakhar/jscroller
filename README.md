@@ -2,7 +2,7 @@ jScroller
 =========
 
 ##jScroller - A lightweight infinite-scroller jQuery plug-in
-##current version: 0.1.5
+##current version: 0.1.7
 
 ###now available @ NuGet https://nuget.org/packages/jScroller
 
