@@ -1,5 +1,5 @@
 ﻿/**
-* jScroller Plugin 0.1.5
+* jScroller Plugin 0.1.7
 *
 * Copyright (c) 2012  Renato Saito (renato.saito at live.com)
 *
@@ -9,11 +9,12 @@
 */
 
 (function ($) {
+    "use strict";
     jQuery.fn.jScroller = function (store, parameters) {
         var defaults = {
             numberOfRowsToRetrieve: 10,
             onSuccessCallback: function (row, container) { },
-            onErrorCallback: function (thrownError) { alert('An error occurred while trying to retrive data from store'); },
+            onErrorCallback: function (thrownError) { window.alert('An error occurred while trying to retrive data from store'); },
             onTimeOutCallback: function () { },
             timeOut: 3 * 1000,
 			autoIncreaseTimeOut: 1000,
@@ -30,7 +31,7 @@
 
         var ajaxParameters;
 
-        if (options.extraParams == null) {
+        if (options.extraParams === null) {
             ajaxParameters = {
                 start: 0,
                 numberOfRowsToRetrieve: options.numberOfRowsToRetrieve
@@ -60,12 +61,12 @@
                         return;
                     }
                     for (var i = 0; i < response.data.length; i++) {
-                        if (end == false) {
+                        if (end === false) {
                             options.onSuccessCallback(response.data[i], list);
                         }
                     }
                     if (loadingByScroll === false) {
-                        if (end == false) {
+                        if (end === false) {
                             list.append('<div><a class="jscroll-loadmore">' + options.loadMoreButtonText + '</a></div>');
                         }
                     }
@@ -75,11 +76,12 @@
                     if (ajaxParameters.start >= response.total) {
                         end = true;
                         list.find('#jscroll-fulllist').remove();
+						list.find(".jscroll-loadmore").parent("div").remove();
                         list.append('<div id="jscroll-fulllist">' + options.fullListText + '</div>');
                     }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
-                    if (thrownError == 'timeout') {
+                    if (thrownError === 'timeout') {
                         options.onTimeOutCallback();
 						
                         if (options.retryOnTimeOut) {
